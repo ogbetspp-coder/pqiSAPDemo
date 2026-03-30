@@ -1,0 +1,47 @@
+{
+  "resourceType": "Bundle",
+  "id": "transaction-rinvoq-45mg-28tabs-bottle-ca-update",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:ppd-rinvoq-45mg-28tabs-bottle-ca",
+      "resource": {
+        "resourceType": "PackagedProductDefinition",
+        "id": "ppd-rinvoq-45mg-28tabs-bottle-ca",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+          ]
+        },
+        "name": "RINVOQ 45 mg tablets bottle presentation (28 tablets) - CA",
+        "description": "Package presentation derived from source string: RINVOQ 45MG 28 TABS BOTTLE CANADA. Count 28 tablets, packaging family BOTTLE, market Canada. No material, closure type, manufacturer, or quality standard information is present in the source string and none has been added. marketingStatus omitted: market token CANADA normalised to CA in resource id and name; marketing status not present in source string. Update v2: description refined to confirm presentation scope — primary bottle presentation only.",
+        "packageFor": [
+          {
+            "reference": "MedicinalProductDefinition/mpd-rinvoq-45mg"
+          }
+        ],
+        "containedItemQuantity": [
+          {
+            "value": 28,
+            "unit": "tablets"
+          }
+        ],
+        "packaging": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/packaging-type",
+                "code": "100000073497",
+                "display": "Bottle"
+              }
+            ]
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PackagedProductDefinition/ppd-rinvoq-45mg-28tabs-bottle-ca"
+      }
+    }
+  ]
+}

@@ -77,7 +77,7 @@
           ]
         },
         "name": "RINVOQ 45 mg tablets bottle presentation (28 tablets) - CA",
-        "description": "Package presentation derived from source string: RINVOQ 45MG 28 TABS BOTTLE CANADA. Count 28 tablets, packaging family BOTTLE, market Canada. No material, closure type, manufacturer, or quality standard information is present in the source string and none has been added.",
+        "description": "Package presentation derived from source string: RINVOQ 45MG 28 TABS BOTTLE CANADA. Count 28 tablets, packaging family BOTTLE, market Canada. No material, closure type, manufacturer, or quality standard information is present in the source string and none has been added. marketingStatus omitted: market token CANADA normalised to CA in resource id and name; marketing status not present in source string.",
         "packageFor": [
           {
             "reference": "MedicinalProductDefinition/mpd-rinvoq-45mg"
@@ -87,28 +87,6 @@
           {
             "value": 28,
             "unit": "tablets"
-          }
-        ],
-        "marketingStatus": [
-          {
-            "country": {
-              "coding": [
-                {
-                  "system": "urn:iso:std:iso:3166",
-                  "code": "CA",
-                  "display": "Canada"
-                }
-              ]
-            },
-            "status": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/publication-status",
-                  "code": "unknown",
-                  "display": "Unknown"
-                }
-              ]
-            }
           }
         ],
         "packaging": {
