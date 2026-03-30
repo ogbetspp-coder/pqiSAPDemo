@@ -3,16 +3,18 @@ param(
     [string]$Mode = "initial"
 )
 
-$ServerBase = $env:FHIR_BASE_URL ?? "http://localhost:8080/fhir"
+# Resolve paths relative to this script, not cwd
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$ServerBase = if ($env:FHIR_BASE_URL) { $env:FHIR_BASE_URL } else { "http://localhost:8080/fhir" }
 
 $Bundle = switch ($Mode) {
-    "initial" { "fhir/rinvoq-45mg-28tabs-bottle-ca.transaction.json" }
-    "update"  { "fhir/rinvoq-45mg-28tabs-bottle-ca-update.transaction.json" }
+    "initial" { Join-Path $ScriptDir "fhir\rinvoq-45mg-28tabs-bottle-ca.transaction.json" }
+    "update"  { Join-Path $ScriptDir "fhir\rinvoq-45mg-28tabs-bottle-ca-update.transaction.json" }
 }
 
 Write-Host "Posting $Bundle to $ServerBase"
 
-$body = Get-Content $Bundle -Raw
+$body = Get-Content $Bundle -Raw -Encoding UTF8
 Invoke-RestMethod `
     -Method Post `
     -Uri $ServerBase `
